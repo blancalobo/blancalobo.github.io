@@ -2,88 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicole Lobo</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #0f172a;
-      color: white;
+      background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      color: #f8fafc;
+      line-height: 1.6;
     }
 
-    h1 {
-      font-size: 48px;
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
     }
 
-    p {
-      font-size: 18px;
-      color: #cbd5f5;
+    .hero {
+      margin-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1;
+      margin: 0 0 16px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 22px;
+      color: #cbd5e1;
     }
 
     .section {
-      margin-top: 40px;
+      margin-top: 56px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin: 0 0 20px;
+      color: #ffffff;
+    }
+
+    .about-box {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      padding: 24px;
+      color: #cbd5e1;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.45);
+    }
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #ffffff;
+    }
+
+    .project-card p {
+      margin: 0 0 14px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .project-card ul {
+      margin: 0 0 18px 20px;
+      padding: 0;
+      color: #cbd5e1;
+    }
+
+    .project-card li {
+      margin-bottom: 8px;
+    }
+
+    .tag-row {
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(96, 165, 250, 0.14);
+      color: #93c5fd;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     a {
       color: #60a5fa;
       text-decoration: none;
+      font-weight: 600;
     }
-    h2 {
-  margin-top: 40px;
-}
 
-strong {
-  color: white;
-}
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .contact-box p {
+      margin: 0 0 12px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .footer {
+      margin-top: 56px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 36px 18px 60px;
+      }
+
+      .section {
+        margin-top: 42px;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+
+      .project-card,
+      .about-box,
+      .contact-box {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
-
 <body>
+  <main class="container">
+    <section class="hero">
+      <h1>Nicole Lobo</h1>
+      <p>Computer Science • Cybersecurity • Data Science</p>
+    </section>
 
-  <h1>Nicole Lobo</h1>
-  <p>Computer Science • Cybersecurity • Data Science</p>
+    <section class="section">
+      <h2>About</h2>
+      <div class="about-box">
+        <p>
+          Computer Science student focused on cybersecurity and data science.
+          Building projects in Git, systems programming, and data analysis.
+        </p>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>About</h2>
-    <p>
-     Computer Science student focused on cybersecurity and data science. 
-      Building projects in Git, systems programming, and data analysis.
-    </p>
-  </div>
+    <section class="section">
+      <h2>Projects</h2>
 
-  <div class="section">
-  <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Git Practice Repository</h3>
+          <p>
+            Built a repository to learn version control using Git and GitHub.
+            This project shows progress from basic commits to branch-based workflow.
+          </p>
 
-  <p>
-    <strong>Git Practice Repository</strong><br>
-    Built a repository to learn version control using Git and GitHub.<br><br>
+          <div class="tag-row">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Version Control</span>
+          </div>
 
-    <strong>Day 1:</strong><br>
-    - Initialized repository<br>
-    - Used add, commit, and push<br><br>
+          <ul>
+            <li>Initialized a repository and pushed it to GitHub</li>
+            <li>Used add, commit, push, pull, status, log, and diff</li>
+            <li>Created and switched branches</li>
+            <li>Made updates in a feature branch and merged back into main</li>
+          </ul>
 
-    <strong>Day 2:</strong><br>
-    - Created and switched branches (feature-1)<br>
-    - Made updates in a feature branch<br>
-    - Merged changes back into main<br>
-    - Practiced git status, log, and diff<br><br>
+          <a href="https://github.com/blancalobo/git-practice" target="_blank">View on GitHub</a>
+        </article>
 
-    This project demonstrates understanding of basic Git workflows and version control practices.<br><br>
+        <article class="project-card">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            Built and deployed a personal website using GitHub Pages to present
+            my background, projects, and contact information in a clean format.
+          </p>
 
-    <a href="https://github.com/blancalobo/git-practice">View on GitHub</a>
-  </p>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
 
-</div>
+          <ul>
+            <li>Created a custom homepage with sections for About, Projects, and Contact</li>
+            <li>Styled the site with spacing, cards, and responsive layout improvements</li>
+            <li>Published the site through my GitHub Pages repository</li>
+          </ul>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p>Email: nicole.lobo01@gmail.com</p>
-    <p>
-    Resume: <a href="#">Coming soon</a>
-    </p>
-  </div>
+          <a href="https://blancalobo.github.io/" target="_blank">View Live Site</a>
+        </article>
+      </div>
+    </section>
 
+    <section class="section">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>Email: <a href="mailto:nicole.lobo01@gmail.com">nicole.lobo01@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/blancalobo" target="_blank">github.com/blancalobo</a></p>
+        <p>Resume: <a href="#">Coming soon</a></p>
+      </div>
+    </section>
+
+    <p class="footer">Built by Nicole Lobo</p>
+  </main>
 </body>
 </html>
